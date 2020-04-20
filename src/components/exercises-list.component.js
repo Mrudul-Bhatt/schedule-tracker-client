@@ -24,7 +24,7 @@ export default class ExercisesList extends Component {
   }
 
   componentDidMount() {
-    axios.get('https://schedule-tracker-api-2.glitch.me/exercises/')
+    axios.get('https://schedule-track-api.herokuapp.com/exercises/')
       .then(response => {
         this.setState({ exercises: response.data })
       })
@@ -34,7 +34,7 @@ export default class ExercisesList extends Component {
   }
 
   deleteExercise(id) {
-    axios.delete('https://schedule-tracker-api-2.glitch.me/exercises/'+id)
+    axios.delete('https://schedule-track-api.herokuapp.com/exercises/'+id)
       .then(response => { console.log(response.data)});
 
     this.setState({
