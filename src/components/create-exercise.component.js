@@ -23,7 +23,7 @@ export default class CreateExercise extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:5000/users/')
+    axios.get('https://schedule-tracker-api-2.glitch.me/users/')
       .then(response => {
         if (response.data.length > 0) {
           this.setState({
@@ -74,10 +74,12 @@ export default class CreateExercise extends Component {
 
     console.log(exercise);
 
-    axios.post('http://localhost:5000/exercises/add', exercise)
-      .then(res => console.log(res.data));
+    axios.post('https://schedule-tracker-api-2.glitch.me/exercises/add', exercise)
+      .then(res => console.log(res.data))
+      .then(() =>  window.location = '/');
 
-    window.location = '/';
+   
+    //window.location.href = 'http://localhost:3000/';
   }
 
   render() {
